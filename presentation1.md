@@ -299,6 +299,113 @@ The end.
 
 ---
 
+class: middle, center
+
+# Code Quality 2016-03-10
+
+---
+
+class: middle, center
+
+## Shared Stack
+
+https://github.com/WilmerLab/stackdocs
+
+
+---
+
+class: middle, center
+
+## Random lessons from the week
+
+
+---
+
+class: middle
+
+### Copying functions, files, configs to multiple places will ruin your life.
+
+Generally:
+
+- if you are copying functions into multiple files => put them in a library and include them.
+- if you are copying code files to multiple places => there's a better way to structure your project.
+- if there is no way around it, automate it. Don't do ANYTHING BY HAND because you will make a mistake and screw it up. The files should be recreated every time the code changes.
+
+Don't copy code, don't copy configs, don't copy jobs files. If you find yourself doing this and can't think of a better way to do it, talk to me and we'll find a better solution.
+
+---
+
+### Use descriptive variable names
+
+- except maybe for dimensions (like x,y,z) and certain mathematical quantities, single-letter variables names should be avoided.
+- don't make people guess what something is, actually describe it.
+- if somebody else were reading your code, would they immediately understand what your variable means? If not, they would immediately ask "what is this variable?" The answer to that question is what you name that variable. Then, when this happens in real life, you can skip both the question and the answer, and when you forget how everything works in six months, you can answer yourself.
+
+---
+
+class: middle
+
+### Git Basics
+
+Demo:
+
+- creating a repository
+- creating a branch
+- merging a branch
+
+
+???
+
+Now do it with git giggle.
+
+---
+class: middle
+
+### Basic Commits
+
+- master should ALWAYS work
+- all experimental work, all incomplete work, all NON-WORKING work should be in branches.
+- commits should be atomic, meaning they should do ONE thing and the code should work both before and after. Don't mix multiple features, bug fixes, etc into one commit.
+- commits should leave the code in a working state. 
+  - exceptions are allowed when you are working on a branch and you clean up the commits before merging back to master.
+
+
+---
+class: middle
+### Commit messages
+
+- should state what you did, but more importantly WHY you did it, and what the purpose was.
+- remember that it should only be one thing. If you are using the word and in describing what you did, you likely need another commit.
+
+---
+class: middle
+
+### Commit message examples
+
+https://github.com/numat/RASPA2/commits/master
+
+
+---
+
+class: middle
+
+I helped with this so I know what it means, but a reasonable person could ask "why was the timeout removed?"
+
+A better message would have been: "removed unnecessary 1s timeout which was causing MacOSX runs to fail after 1s. Other platforms seem to have been ignoring the timeout and would wait indefinitely for the RASPA process to complete (which is the desired behavior)."
+
+???
+
+You'll get lots of feedback on these, going forward.
+
+---
+
+The end.
+
+
+
+
+---
+
 commenting:
      explain what it SHOULD do, not what it is doing
      explain the why, not the what
