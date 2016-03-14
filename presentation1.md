@@ -328,7 +328,9 @@ class: middle
 Generally:
 
 - if you are copying functions into multiple files => put them in a library and include them.
+
 - if you are copying code files to multiple places => there's a better way to structure your project.
+
 - if there is no way around it, automate it. Don't do ANYTHING BY HAND because you will make a mistake and screw it up. The files should be recreated every time the code changes.
 
 Don't copy code, don't copy configs, don't copy jobs files. If you find yourself doing this and can't think of a better way to do it, talk to me and we'll find a better solution.
@@ -338,7 +340,9 @@ Don't copy code, don't copy configs, don't copy jobs files. If you find yourself
 ### Use descriptive variable names
 
 - except maybe for dimensions (like x,y,z) and certain mathematical quantities, single-letter variables names should be avoided.
+
 - don't make people guess what something is, actually describe it.
+
 - if somebody else were reading your code, would they immediately understand what your variable means? If not, they would immediately ask "what is this variable?" The answer to that question is what you name that variable. Then, when this happens in real life, you can skip both the question and the answer, and when you forget how everything works in six months, you can answer yourself.
 
 ---
@@ -351,6 +355,7 @@ Concepts:
 
 - remote repository / local working copy
   - git push / git pull
+
 - making changes to your local working copy:
   - git add / git commit
 
@@ -364,8 +369,11 @@ Git command cheat sheet: https://www.git-tower.com/blog/git-cheat-sheet/
 ### Basic Demo
 
 - creating a repository
+
 - git pull
+
 - committing
+
 - git push
 
 ???
@@ -426,6 +434,8 @@ You'll get lots of feedback on these, going forward.
 
 ---
 
+### A Basic Workflow
+
 A basic workflow for something simple:
 
 ```
@@ -439,6 +449,8 @@ git push
 
 
 ---
+
+### A Full workflow
 
 A workflow for something more complex, or that will take longer:
 
@@ -469,6 +481,7 @@ git push
 
 ---
 
+### References
 
 Getting started: http://rogerdudler.github.io/git-guide/  
 
