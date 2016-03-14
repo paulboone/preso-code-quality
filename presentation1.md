@@ -347,27 +347,47 @@ class: middle
 
 ### Git Basics
 
-Demo:
+Concepts:
+
+- remote repository / local working copy
+  - git push / git pull
+- making changes to your local working copy:
+  - git add / git commit
+
+
+Getting started: http://rogerdudler.github.io/git-guide/  
+If you want to nerd out: http://git-scm.com/book/en/v2  
+Git command cheat sheet: https://www.git-tower.com/blog/git-cheat-sheet/  
+
+---
+
+### Basic Demo
 
 - creating a repository
-- creating a branch
-- merging a branch
-
+- git pull
+- committing
+- git push
 
 ???
 
-Now do it with git giggle.
+Now do it with git kraken?
+
 
 ---
 class: middle
 
-### Basic Commits
+### Commits
 
-- master should ALWAYS work
-- all experimental work, all incomplete work, all NON-WORKING work should be in branches.
-- commits should be atomic, meaning they should do ONE thing and the code should work both before and after. Don't mix multiple features, bug fixes, etc into one commit.
-- commits should leave the code in a working state. 
+1. **master should ALWAYS work.**
+2. commits should be atomic, meaning they should do ONE thing and the code should work both before and after. Don't mix multiple features, bug fixes, etc into one commit.
+3. all experimental work, all incomplete work, all NON-WORKING work should be in branches.
+4. commits should leave the code in a working state. 
   - exceptions are allowed when you are working on a branch and you clean up the commits before merging back to master.
+5. **master should ALWAYS work.**
+
+???
+
+You should always be ready to share master with someone important you just met at a conference, without any shred of doubt or concern.
 
 
 ---
@@ -375,7 +395,7 @@ class: middle
 ### Commit messages
 
 - should state what you did, but more importantly WHY you did it, and what the purpose was.
-- remember that it should only be one thing. If you are using the word and in describing what you did, you likely need another commit.
+- remember that it should only be one thing. If you are using the word "and" in describing what you did, you likely need another commit.
 
 ---
 class: middle
@@ -396,6 +416,57 @@ A better message would have been: "removed unnecessary 1s timeout which was caus
 ???
 
 You'll get lots of feedback on these, going forward.
+
+
+
+---
+
+A basic workflow for something simple:
+
+```
+git checkout master
+git pull
+### make changes
+git add ...
+git commit -m "this is what I did and why I did it"
+git push
+```
+
+
+---
+
+A workflow for something more complex, or that will take longer:
+
+```
+git checkout master
+git pull
+git branch my_new_feature
+git checkout my_new_feature
+### make changes
+git add ...
+git commit -m "this is what I did and why I did it"
+git checkout master
+git merge my_new_feature
+git push
+```
+
+---
+
+### Branching guidelines
+
+- if you are working on something small, making changes and committing to master is fine.
+- if you are working on something large or experimental, make a branch
+- if you are working on something large or experimental, and you start making changes that are generally useful and would immediately work on master, you may want to put those directly on master. (otherwise, you'll start expecting to be able to use that code, but when you branch for a new feature, it won't be there).
+
+
+
+---
+
+
+Getting started: http://rogerdudler.github.io/git-guide/  
+If you want to nerd out: http://git-scm.com/book/en/v2  
+Git command cheat sheet: https://www.git-tower.com/blog/git-cheat-sheet/  
+
 
 ---
 
